@@ -1,0 +1,52 @@
+﻿<Window x:Class="TC.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TC.View"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        Title="Mini Total Commander" 
+        Height="450"
+        Width="800"        
+        ResizeMode="NoResize">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <local:PanelTC
+                Grid.Column="0"
+                DataContext="{Binding Left}">
+
+            </local:PanelTC>
+
+            <local:PanelTC
+                Grid.Column="1"
+                DataContext="{Binding Right}">
+            </local:PanelTC>
+        </Grid>
+
+        <Button
+            Grid.Row="1"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Width="100"
+            Height="30"
+            Content="{Binding ButtonText}"
+            Command="{Binding Copy}"
+            >
+            
+        </Button>
+    </Grid>
+</Window>
