@@ -129,6 +129,12 @@ namespace TC.Model
             if (right)
                 MainViewModel.Instance.ButtonText = "<< Copy";
         }
+
+        public List<string> GetDirectories()
+        {
+            return Directory.GetLogicalDrives().ToList();
+        }
+
         #endregion
 
     }

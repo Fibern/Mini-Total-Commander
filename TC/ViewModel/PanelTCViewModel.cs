@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.IO;
 using System.Windows.Input;
 using System.ComponentModel;
 using TC.Model;
@@ -93,7 +91,7 @@ namespace TC.ViewModel
 
         private ICommand getDrives;
         public ICommand GetDrives => getDrives ?? (getDrives = new RelayCommand(
-            o => Drives = Directory.GetLogicalDrives().ToList(),
+            o => Drives = tCModel.GetDirectories(),
             o => true
             ));
 
