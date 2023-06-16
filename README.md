@@ -1,2 +1,2 @@
 # Mini-Total-Commander
-Simple app made in C# with WPF that alows you to copy files
+Simple app that alows user to copy files
